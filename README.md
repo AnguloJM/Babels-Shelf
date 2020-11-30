@@ -4,24 +4,22 @@
 
 **Babel's Shelf** is a place where books worms just like yourself can come and share their favorite books. Cant find the book your looking for? Not a problem! You can add your book to the bookshelf. You can also personalize and save your own favorite books to your personal shelf!
 
-
 <br>
 
 ## MVP
 
-> The Minimum Viable Product should be a well-planned, easily-communicated product, ensuring that the client's deliverable will be achievable and meet specifications within the time frame estimated.
-
-_The **Project Title** MVP lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus dapibus fermentum risus vitae bibendum. Integer vel ipsum mollis odio sollicitudin ornare eu vel ex. In quis fringilla velit, ac maximus quam. Etiam eget placerat neque. Aenean faucibus sem non nisi lobortis ullamcorper._
+- Build a Ruby on Rails server, exposing RESTful JSON endpoints
+- Establish a database consisting of 3 tables
+- Create a front end using React with full CRUD
 
 <br>
 
 ### Goals
 
-- _Lorem ipsum, dolor sit amet,_
-- _consectetur adipiscing elit._
-- _Phasellus dapibus fermentum risus vitae bibendum._
-- _Integer vel ipsum mollis odio sollicitudin ornare eu vel ex._
-- _etc._
+- Allow users to create an account
+- Allow users to browse BookShelf library
+- Allow users to add to the bookshelf library
+- Allow users to view, add, edit, delete books to their personal shelf (full CRUD front-end)
 
 <br>
 
@@ -31,11 +29,11 @@ _The **Project Title** MVP lorem ipsum dolor sit amet, consectetur adipiscing el
 
 |     Library      | Description                                |
 | :--------------: | :----------------------------------------- |
-|      React       | _Lorem ipsum dolor sit amet, consectetur._ |
-|   React Router   | _Lorem ipsum dolor sit amet, consectetur._ |
-| React SemanticUI | _Lorem ipsum dolor sit amet, consectetur._ |
-|     Express      | _Lorem ipsum dolor sit amet, consectetur._ |
-|  Express Router  | _Lorem ipsum dolor sit amet, consectetur._ |
+| React | Front end library |
+| React Router | Link, Switch, Route |
+| Axios | API calls |
+| Ruby on Rails | backend server |
+| Postgresql |  Relational database that will allow the client to interact with the data |
 
 <br>
 
