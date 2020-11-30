@@ -41,7 +41,7 @@
 
 #### Wireframes
 
-https://www.figma.com/file/btJzqzBdyOxVw8wPwbFwU4/Untitled?node-id=0%3A1
+[Wireframes](https://www.figma.com/file/btJzqzBdyOxVw8wPwbFwU4/Untitled?node-id=0%3A1)
 
 #### Component Tree
 
