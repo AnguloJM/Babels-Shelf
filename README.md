@@ -2,7 +2,7 @@
 
 ## Overview
 
-**Babel's Shelf** is a place where books worms just like yourself come and share their favorite books. Cant find the book your looking for? Not a problem! You can add your book to the bookshelf. You can also personalize and save your own favorite books to your personal shelf!
+**Babel's Shelf** is a place where books worms just like yourself can come and share their favorite books. Cant find the book your looking for? Not a problem! You can add your book to the bookshelf. You can also personalize and save your own favorite books to your personal shelf!
 
 
 <br>
