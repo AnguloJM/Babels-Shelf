@@ -48,20 +48,59 @@
 [Component Tree](https://whimsical.com/EhxQv77qJhcNAprApLi4GZ) 
 
 #### Component Hierarchy
-
-> Use this section to define your React components and the data architecture of your app. This should be a reflection of how you expect your directory/file tree to look like. 
+ 
 
 ``` structure
 
-src
 |__ assets/
       |__ fonts
-      |__ graphics
       |__ images
-      |__ mockups
+      |__ icons
+|__ controllers/
+      |__ applications_controller.rb
+	|__ authentication_controller.rb
+	|__ myShelf_controller.rb
+	|__ bookshelf_controller.rb
+	|__ users_controller.rb
+|__ models/
+
+client
+src
 |__ components/
-      |__ Header.jsx
+  |__ Header.jsx
+  |__ Header.css
+|__ containers/
+	|__ MainContainer.jsx
+  |__ MainContainer.css
+|__ screens/
+	|__ welcome.jsx
+  |__ welcome.css
+	|__ dashboard.jsx
+  |__ dashboard.css
+	|__ createAccount.jsx
+  |__ createAccount.css
+	|__ myshelf.jsx
+  |__ myshelf.css
+	|__ bookshelf.jsx
+  |__ bookshelf.css
+	|__ Login.jsx
+  |__ Login.css
+	|__ Register.jsx
+  |__ Register.css
+      |__ addBook.jsx
+  |__ addBook.css
 |__ services/
+	|__ apiConfig.js
+	|__ auth.js
+	|__ books.js
+|__ App.css/
+|__ App.js/
+|__ config/
+	|__ routes.rb
+|__ db/	
+	|__ migrate/
+	|__ schema.rb/
+	|__ seeds.rb/
 
 ```
 
