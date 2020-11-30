@@ -2,7 +2,7 @@
 
 ## Overview
 
-_**Project Title** is lorem ipsum dolor sit amet. Phasellus dapibus fermentum risus vitae bibendum. Integer vel ipsum mollis odio sollicitudin ornare eu vel ex. In quis fringilla velit, ac maximus quam. Etiam eget placerat neque. Aenean faucibus sem non nisi lobortis ullamcorper._
+_**Project Title** is a place where books worms just like yourself come and share their favorite books. Cant find the book your looking for? Not a problem! You can add your book to the bookshelf. You can also personalize and save your own favorite books to your personal shelf!
 
 
 <br>
