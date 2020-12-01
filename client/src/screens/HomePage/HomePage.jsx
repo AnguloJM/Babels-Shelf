@@ -1,5 +1,6 @@
 import React from 'react';
 import Layout from '../../components/shared/Layout/Layout'
+import './HomePage.css'
 
 const HomePage = () => {
   
@@ -12,6 +13,10 @@ const HomePage = () => {
             src="/assets/babels library.jpg"
             alt="bookshelf drawing"
           />
+        </div>
+        <div className="welcome-message">
+          <h1>Welcome</h1>
+          <p></p>
         </div>
       </div>
     </Layout>
