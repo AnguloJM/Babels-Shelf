@@ -6,6 +6,7 @@
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
 
+Favorite.destroy_all
 Book.destroy_all
 User.destroy_all
 
@@ -24,4 +25,8 @@ puts"#{User.count} users created!"
 
 puts "#{Book.count} books created!"
 
-@favorite1 = Favorite.create!()
+@favorite1 = Favorite.create!(user: @user, book: @book1)
+@favorite2 = Favorite.create!(user: @user, book: @book2)
+@favorite3 = Favorite.create!(user: @user, book: @book3)
+
+puts "#{Favorite.count} favorites created!"
