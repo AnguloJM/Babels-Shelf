@@ -1,0 +1,18 @@
+.header {
+  background-color: #F4F2E9;
+  height: 100px;
+}
+
+#login {
+  background-color: #53352D;
+  color: #FFFFFF;
+  width: 100px;
+  height: 25px;
+}
+
+#register {
+  background-color: #53352D;
+  color: #FFFFFF;
+  width: 100px;
+  height: 25px
+}
