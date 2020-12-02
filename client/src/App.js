@@ -33,7 +33,7 @@ function App() {
   const handleRegister = async (registerData) => {
     const userData = await registerUser(registerData);
     setCurrentUser(userData);
-    history.push('/');
+    history.push('/dashboard');
   }
 
   const handleLogout = () => {
@@ -44,24 +44,28 @@ function App() {
   }
   return (
     <div className="App">
-      {/* <Layout
+      <Layout
         currentUser={currentUser}
         handleLogout={handleLogout}
-      > */}
+      >
         <Switch>
         <Route exact path="/" component={HomePage} />
         <Route exact path="/dashboard" component={Dashboard} />
           
-          <Route path='/login'>
+          <Route exact path='/login'>
             <Login handleLogin={handleLogin} />
           </Route>
 
-          <Route path='/register'>
+          <Route exact path='/register'>
             <Register handleRegister={handleRegister} />
           </Route>
 
+          <Route exact path='/'>
+          <Dashboard currentUser={currentUser} />
+        </Route>
+
         </Switch>
-      {/* </Layout> */}
+      </Layout>
     </div>
   );
 }

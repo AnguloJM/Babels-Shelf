@@ -1,11 +1,9 @@
 import React from 'react';
-import Layout from '../../components/shared/Layout/Layout'
 import './HomePage.css'
 
 const HomePage = () => {
   
   return (
-    <Layout>
       <div className="homepage">
         <div className="top-box">
           <img
@@ -19,7 +17,6 @@ const HomePage = () => {
           <p></p>
         </div>
       </div>
-    </Layout>
   )
 }
 

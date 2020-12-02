@@ -1,13 +1,23 @@
 import React from 'react';
-import Layout from '../../components/shared/Layout/Layout'
+import { Link } from 'react-router-dom';
+import './dashboard.css';
 
-const Dashboard = () => {
+const Dashboard = (props) => {
+  const { currentUser } = props;
+
   return (
-    <Layout>
-      <div>
-        <p>this is dashboard</p>
+    <div>
+      <div className="user-greeting-box">
+        <h2>Welcome</h2>
+      {/* <h2>Welcome{ currentUser.username}</h2> */}
       </div>
-    </Layout>
+      <div className="routes-body">
+        <Link id="bookshelf-link" to='/bookshelf'>Search BookShelf</Link>
+        <Link id="myshelf-link" to='/myShelf'>My Shelf</Link>
+        <Link id="addbooks-link" to='/addBooks'>Add Books</Link>
+      </div>
+    </div>
+
   )
 }
 
