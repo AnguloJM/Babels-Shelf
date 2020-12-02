@@ -7,6 +7,9 @@ import { loginUser, registerUser, removeToken, verifyUser } from './services/aut
 import './App.css';
 import Layout from './components/shared/Layout/Layout';
 import Dashboard from './screens/Dashboard/Dashboard.jsx';
+import BookShelf from './screens/BookShelf/BookShelf';
+import MyShelf from './screens/MyShelf/MyShelf';
+import AddBooks from './screens/AddBooks/AddBooks';
 
 function App() {
 
@@ -49,8 +52,11 @@ function App() {
         handleLogout={handleLogout}
       >
         <Switch>
-        <Route exact path="/" component={HomePage} />
-        <Route exact path="/dashboard" component={Dashboard} />
+          <Route exact path="/" component={HomePage} />
+          <Route exact path="/dashboard" component={Dashboard} />
+          <Route exact path="/bookshelf" component={BookShelf} />
+          <Route exact path="/myShelf" component={MyShelf}/>
+          <Route exact path="/addBooks" component={AddBooks}/>
           
           <Route exact path='/login'>
             <Login handleLogin={handleLogin} />
