@@ -1,4 +1,4 @@
-import api from './api-config';
+import api from './apiConfig';
 
 export const loginUser = async (loginData) => {
   const resp = await api.post('/auth/login', { authentication: loginData })

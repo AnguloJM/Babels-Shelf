@@ -7,8 +7,8 @@ const Header = () => {
     <header className="header">
       <div>
           <h1><Link id="logo" to="/">Babel's Shelf</Link></h1>
-        <button id="login">Login</button>
-        <button id="register">Register</button>
+        <Link to="/login"><button id="login">Login</button></Link>
+        <Link to="/register"><button id="register">Register</button></Link>
       </div>
     </header>
   )
