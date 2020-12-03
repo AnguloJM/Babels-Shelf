@@ -1,13 +1,21 @@
 import React, { useEffect, useState } from 'react';
-import { Link, useParams } from 'react-router-dom';
-import { renderAllBooks } from '../../services/books';
+import { Link, useHistory } from 'react-router-dom';
+import { renderAllBooks, destroyBook, renderOneBook } from '../../services/books';
 import './BookShelf.css'
 
 const BookShelf = (props) => {
 
+  // const history = useHistory();
+
+  // const [books, setBooks] = useState({
+  //   img_url: '',
+  //   title: '',
+  //   author: '',
+  //   genre: ''
+  // })
   const [allBooks, setAllBooks] = useState([])
   const [isDeleted, setDeleted] = useState(false);
-  let { id } = useParams();
+  // let { id } = useParams();
   // const { currentUser } = props;
 
   useEffect(() => {
@@ -16,14 +24,26 @@ const BookShelf = (props) => {
       setAllBooks(bookData)
     }
     getAllBooks();
-  }, [])
+  }, [isDeleted])
 
-  const handleSubmit = async (event) => {
-    event.preventDefault();
-    let { id } = props.match.params;
-    const deleted = await destroyBook(id, lesson);
-    setDeleted(deleted);
+  // useEffect(() => {
+  //   const fetchBook = async () => {
+  //     const book = await renderOneBook(id);
+  //     setBooks(book);
+  //   }
+  //   fetchBook();
+  // }, [id]);
+
+  const handleClick = async (id) => {
+    // let { id } = props.match.params;
+    await destroyBook(id);
+    setDeleted(!isDeleted);
+    // history.push('/bookshelf')
   }
+
+  // if (isDeleted) {
+  //   return <Redirect to={`/bookshelf`}/>
+  // }
 
   return (
     <>
@@ -40,9 +60,12 @@ const BookShelf = (props) => {
                alt="book cover"
              />
              <p>{book.title}</p>
-             <Link className="delete-link" to={`/bookshelf/`}>
-               <button id="card-delete-button">Delete</button>
-             </Link>
+             <button>Add to My shelf</button>
+             <button
+               id="card-delete-button"
+               onClick={() => handleClick(book.id)}>
+               <Link className="delete-link" to={`/bookshelf/`}>Delete</Link>
+             </button>
           </div>
           ))
       }
