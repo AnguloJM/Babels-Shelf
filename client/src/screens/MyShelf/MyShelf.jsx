@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from 'react';
+import { Link } from 'react-router-dom';
 import { renderAllFavorites } from '../../services/favorites';
 import { renderAllBooks } from '../../services/books';
 import './MyShelf.css'
@@ -44,12 +45,14 @@ const MyShelf = (props) => {
         favBooks.map(book => (
           <div className="content-wrap" key={book.id} > 
             <img
-              className="bookshelf-img"
+              className="myshelf-img"
               src={book.img_url}
               alt="book cover"
             />
             <p>{book.title}</p>
-         </div>
+            <Link className="edit-link" to={`/editbook/${book.id}/`}><button id="card-edit-button">Edit</button></Link>
+            <Link className="delete-link" to={`/myShelf/${currentUser.id}/delete`}><button id="card-delete-button">Delete</button></Link>
+          </div>
          ))
       }
     </div>

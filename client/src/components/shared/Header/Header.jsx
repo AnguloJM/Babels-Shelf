@@ -37,16 +37,13 @@ const Header = (props) => {
             <>
             </>
       }
-    
-
-
-      {/* <hr />
+  
       {
         currentUser &&
         <>
-          <Link to="/dashboard">dashboard</Link>
+          <Link to="/dashboard"><button id="return-button">Return to Dashboard</button></Link>
         </>
-      } */}
+      }
     </div>
   )
 }

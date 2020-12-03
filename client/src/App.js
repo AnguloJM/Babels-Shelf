@@ -10,6 +10,7 @@ import Dashboard from './screens/Dashboard/Dashboard.jsx';
 import BookShelf from './screens/BookShelf/BookShelf';
 import MyShelf from './screens/MyShelf/MyShelf';
 import AddBooks from './screens/AddBooks/AddBooks';
+import EditBook from './screens/EditBook/EditBook';
 
 function App() {
 
@@ -58,11 +59,10 @@ function App() {
         currentPath={currentPath}
       >
         <Switch>
-          {/* <Route exact path="/" component={HomePage} /> */}
-          {/* <Route exact path="/dashboard" component={Dashboard} /> */}
           <Route exact path="/bookshelf" component={BookShelf} />
-          {/* <Route exact path="/myShelf" component={MyShelf}/> */}
-          <Route exact path="/addBooks" component={AddBooks}/>
+          <Route exact path="/addBooks" component={AddBooks} />
+          <Route exact path="/editBook/:id/edit" component={EditBook} />
+          <Route exact path="/editbook/:id" component={EditBook}/>
           
           <Route exact path='/myShelf'>
             <MyShelf currentUser={currentUser}/>
@@ -84,7 +84,6 @@ function App() {
             <HomePage setCurrentPath={handlePath} />
           </Route>
           
-
         </Switch>
       </Layout>
     </div>
