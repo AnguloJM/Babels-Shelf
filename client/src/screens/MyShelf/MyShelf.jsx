@@ -52,7 +52,6 @@ const MyShelf = (props) => {
             />
             <p>{book.title}</p>
             <Link className="edit-link" to={`/editbook/${book.id}/`}><button id="card-edit-button">Edit</button></Link>
-            <Link className="delete-link" to={`/myShelf/${currentUser.id}/delete`}><button id="card-delete-button">Delete</button></Link>
           </div>
          ))
       }

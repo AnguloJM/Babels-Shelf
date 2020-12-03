@@ -11,6 +11,8 @@ const AddBooks = () => {
     genre: ''
   });
 
+  const [allBooks, setAllBooks] = useState([])
+
   const [isCreated, setCreated] = useState(false);
 
   const handleChange = (event) => {
@@ -28,7 +30,7 @@ const AddBooks = () => {
   }
 
   if (isCreated) {
-    return <Redirect to={`/dashboard`}/>
+    return <Redirect to={`/bookshelf`}/>
   }
 
   return (

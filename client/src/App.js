@@ -59,10 +59,13 @@ function App() {
         currentPath={currentPath}
       >
         <Switch>
-          <Route exact path="/bookshelf" component={BookShelf} />
           <Route exact path="/addBooks" component={AddBooks} />
           <Route exact path="/editBook/:id/edit" component={EditBook} />
-          <Route exact path="/editbook/:id" component={EditBook}/>
+          <Route exact path="/editbook/:id" component={EditBook} />
+          
+          <Route exact path="/bookshelf">
+            <BookShelf currentUser={currentUser}/>
+          </Route>
           
           <Route exact path='/myShelf'>
             <MyShelf currentUser={currentUser}/>

@@ -1,10 +1,14 @@
 import React, { useEffect, useState } from 'react';
+import { Link, useParams } from 'react-router-dom';
 import { renderAllBooks } from '../../services/books';
 import './BookShelf.css'
 
 const BookShelf = (props) => {
 
   const [allBooks, setAllBooks] = useState([])
+  const [isDeleted, setDeleted] = useState(false);
+  let { id } = useParams();
+  // const { currentUser } = props;
 
   useEffect(() => {
     const getAllBooks = async () => {
@@ -13,6 +17,13 @@ const BookShelf = (props) => {
     }
     getAllBooks();
   }, [])
+
+  const handleSubmit = async (event) => {
+    event.preventDefault();
+    let { id } = props.match.params;
+    const deleted = await destroyBook(id, lesson);
+    setDeleted(deleted);
+  }
 
   return (
     <>
@@ -29,6 +40,9 @@ const BookShelf = (props) => {
                alt="book cover"
              />
              <p>{book.title}</p>
+             <Link className="delete-link" to={`/bookshelf/`}>
+               <button id="card-delete-button">Delete</button>
+             </Link>
           </div>
           ))
       }
