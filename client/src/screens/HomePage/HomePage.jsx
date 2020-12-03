@@ -1,7 +1,9 @@
 import React from 'react';
 import './HomePage.css'
 
-const HomePage = () => {
+const HomePage = (props) => {
+
+  props.setCurrentPath("")
   
   return (
       <div className="homepage">

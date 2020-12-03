@@ -10,7 +10,6 @@ const BookShelf = (props) => {
     const getAllBooks = async () => {
       const bookData = await renderAllBooks();
       setAllBooks(bookData)
-      console.log(bookData)
     }
     getAllBooks();
   }, [])

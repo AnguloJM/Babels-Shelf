@@ -14,6 +14,7 @@ import AddBooks from './screens/AddBooks/AddBooks';
 function App() {
 
   const [currentUser, setCurrentUser] = useState(null);
+  const [currentPath, setCurrentPath] = useState("")
   const history = useHistory()
 
   useEffect(() => {
@@ -26,6 +27,10 @@ function App() {
     }
     handleVerify();
   }, [])
+
+  const handlePath = (userPath) => {
+    setCurrentPath(userPath)
+  }
 
   const handleLogin = async (loginData) => {
     const userData = await loginUser(loginData);
@@ -50,25 +55,35 @@ function App() {
       <Layout
         currentUser={currentUser}
         handleLogout={handleLogout}
+        currentPath={currentPath}
       >
         <Switch>
-          <Route exact path="/" component={HomePage} />
-          <Route exact path="/dashboard" component={Dashboard} />
+          {/* <Route exact path="/" component={HomePage} /> */}
+          {/* <Route exact path="/dashboard" component={Dashboard} /> */}
           <Route exact path="/bookshelf" component={BookShelf} />
-          <Route exact path="/myShelf" component={MyShelf}/>
+          {/* <Route exact path="/myShelf" component={MyShelf}/> */}
           <Route exact path="/addBooks" component={AddBooks}/>
           
+          <Route exact path='/myShelf'>
+            <MyShelf currentUser={currentUser}/>
+          </Route>
+            
           <Route exact path='/login'>
-            <Login handleLogin={handleLogin} />
+            <Login handleLogin={handleLogin} setCurrentPath={handlePath}/>
           </Route>
 
           <Route exact path='/register'>
-            <Register handleRegister={handleRegister} />
+            <Register handleRegister={handleRegister} setCurrentPath={handlePath} />
+          </Route>
+
+          <Route exact path='/dashboard'>
+            <Dashboard currentUser={currentUser} />
           </Route>
 
           <Route exact path='/'>
-          <Dashboard currentUser={currentUser} />
-        </Route>
+            <HomePage setCurrentPath={handlePath} />
+          </Route>
+          
 
         </Switch>
       </Layout>

@@ -3,22 +3,43 @@ import './Header.css';
 import { Link } from 'react-router-dom';
 
 const Header = (props) => {
-  const { currentUser, handleLogout } = props;
+  const { currentUser, handleLogout, currentPath } = props;
+
+  const color = currentUser ? "header-login" : "header"
+        
   return (
-    <div className="header">
+    <div className={color}>
       <h1><Link id="logo" to="/">Babel's Shelf</Link></h1>
       {
         currentUser ?
           <>
-            <h2>Weclome {currentUser.username}</h2>
             <button onClick={handleLogout}>Logout</button>
           </>
           :
+
+          currentPath === "" ?
           <>
-            <Link to="/login"><button id="login">Login</button></Link>
-            <Link to="/register"><button id="register">Register</button></Link>
+              <Link to="/login"><button id="login">Login</button></Link>
+              <Link to="/register"><button id="register">Register</button></Link>
           </>
+            :
+
+            currentPath === "login" ?
+            <>
+              <Link to="/register"><button id="register">Register</button></Link>
+            </>
+            :
+            currentPath === "register" ?
+            <>
+            <Link to="/login"><button id="login">Login</button></Link>
+            </>
+            :
+            <>
+            </>
       }
+    
+
+
       {/* <hr />
       {
         currentUser &&
