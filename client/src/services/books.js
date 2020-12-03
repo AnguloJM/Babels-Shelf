@@ -1,4 +1,4 @@
-import api from './api-config';
+import api from './apiConfig';
 
 export const renderAllBooks = async () => {
   const resp = await api.get('/books')

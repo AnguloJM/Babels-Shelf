@@ -7,6 +7,8 @@ export default function Login(props) {
     password: ""
   })
 
+  props.setCurrentPath("login")
+
   const handleChange = (e) => {
     const { name, value } = e.target;
     setFormData(prevState => ({
@@ -39,7 +41,6 @@ export default function Login(props) {
         />
       </label>
       <br />
-      <Link to='/register'>Register</Link>
       <button>Submit</button>
     </form>
   )

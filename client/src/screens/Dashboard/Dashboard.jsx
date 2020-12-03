@@ -8,8 +8,7 @@ const Dashboard = (props) => {
   return (
     <div>
       <div className="user-greeting-box">
-        <h2>Welcome</h2>
-      {/* <h2>Welcome{ currentUser.username}</h2> */}
+        <h2>Welcome { currentUser.username}</h2>
       </div>
       <div className="routes-body">
         <Link id="bookshelf-link" to='/bookshelf'>Search BookShelf</Link>

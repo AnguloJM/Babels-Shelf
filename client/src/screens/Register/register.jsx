@@ -7,6 +7,8 @@ export default function Register(props) {
     password: ""
   })
 
+  props.setCurrentPath("register")
+
   const handleChange = (e) => {
     const { name, value } = e.target;
     setFormData(prevState => ({

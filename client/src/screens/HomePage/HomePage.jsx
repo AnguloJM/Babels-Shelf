@@ -1,13 +1,15 @@
 import React from 'react';
 import './HomePage.css'
 
-const HomePage = () => {
+const HomePage = (props) => {
+
+  props.setCurrentPath("")
   
   return (
       <div className="homepage">
         <div className="top-box">
           <img
-            id="bookshelf-img"
+            id="homescreen-img"
             src="/assets/babels library.jpg"
             alt="bookshelf drawing"
           />

@@ -9,6 +9,7 @@ const Layout = (props) => {
       <Header
         currentUser={props.currentUser}
         handleLogout={props.handleLogout}
+        currentPath={props.currentPath}
       />
       <div className="layout-children">{props.children}</div>
       <Footer />
