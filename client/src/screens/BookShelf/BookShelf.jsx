@@ -1,22 +1,13 @@
 import React, { useEffect, useState } from 'react';
-import { Link, useHistory } from 'react-router-dom';
-import { renderAllBooks, destroyBook, renderOneBook } from '../../services/books';
+import { Link } from 'react-router-dom';
+import { renderAllBooks, destroyBook } from '../../services/books';
+import { createFavorite } from '../../services/favorites';
 import './BookShelf.css'
 
 const BookShelf = (props) => {
-
-  // const history = useHistory();
-
-  // const [books, setBooks] = useState({
-  //   img_url: '',
-  //   title: '',
-  //   author: '',
-  //   genre: ''
-  // })
   const [allBooks, setAllBooks] = useState([])
   const [isDeleted, setDeleted] = useState(false);
-  // let { id } = useParams();
-  // const { currentUser } = props;
+  const { currentUser } = props;
 
   useEffect(() => {
     const getAllBooks = async () => {
@@ -26,31 +17,21 @@ const BookShelf = (props) => {
     getAllBooks();
   }, [isDeleted])
 
-  // useEffect(() => {
-  //   const fetchBook = async () => {
-  //     const book = await renderOneBook(id);
-  //     setBooks(book);
-  //   }
-  //   fetchBook();
-  // }, [id]);
-
   const handleClick = async (id) => {
-    // let { id } = props.match.params;
     await destroyBook(id);
     setDeleted(!isDeleted);
-    // history.push('/bookshelf')
   }
 
-  // if (isDeleted) {
-  //   return <Redirect to={`/bookshelf`}/>
-  // }
-
+  const toggleMyShelf = async (bookId) => {
+    await createFavorite({'user_id': currentUser.id, 'book_id': bookId})
+   }
+  
   return (
     <>
       <div className="bookshelf-title">
         <h2>Babel's Shelf</h2>
       </div>
-    <div className="page-container">
+      <div className="page-container">
       {
          allBooks.map(book => (
            <div className="content-wrap" key={book.id}> 
@@ -60,7 +41,7 @@ const BookShelf = (props) => {
                alt="book cover"
              />
              <p>{book.title}</p>
-             <button>Add to My shelf</button>
+             <button type="button" onClick={() => toggleMyShelf(book.id)}>Add to My Shelf</button>
              <button
                id="card-delete-button"
                onClick={() => handleClick(book.id)}>
