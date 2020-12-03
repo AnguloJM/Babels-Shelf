@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { useParams, Redirect, Link } from 'react-router-dom';
-import { renderOneFavorite, updateFavorite } from '../../services/favorites';
+import { renderOneBook, updateBook } from '../../services/books';
 
 const EditBook = (props) => {
 
@@ -16,7 +16,7 @@ const EditBook = (props) => {
 
   useEffect(() => {
     const fetchBook = async () => {
-      const book = await renderOneFavorite(id);
+      const book = await renderOneBook(id);
       setBooks(book);
     }
     fetchBook();
@@ -33,12 +33,12 @@ const EditBook = (props) => {
   const handleSubmit = async (event) => {
     event.preventDefault();
     let { id } = props.match.params;
-    const updated = await updateFavorite(id, books);
+    const updated = await updateBook(id, books);
     setUpdated(updated);
   }
 
   if (isUpdate) {
-    return <Redirect to={`/myShelf/${props.match.params.id}`}/>
+    return <Redirect to={`/myShelf/`}/>
   }
 
   return (
@@ -50,7 +50,8 @@ const EditBook = (props) => {
     <div className="lesson-edit">
       <form className="edit-form" onSubmit={handleSubmit}>
         <div className="inputs">
-          <div className="img-box">
+            <div className="img-box">
+            <label htmlFor="img_url">Image Link</label>
             <input
               className="input-img"
               type="text"
@@ -59,9 +60,9 @@ const EditBook = (props) => {
               autoFocus
               onChange={handleChange}
             />
-            <label htmlFor="img_url">Image Link</label>
           </div>
-          <div className="title-box">
+            <div className="title-box">
+            <label htmlFor="title">Title</label>
             <input
               className="input-title"
               type="text"
@@ -70,10 +71,10 @@ const EditBook = (props) => {
               required
               autoFocus
               onChange={handleChange}
-            />
-            <label htmlFor="title">Title</label>  
+            />  
           </div>
-          <div className="author-box">
+            <div className="author-box">
+            <label htmlFor="author">Author</label>
             <input
               className="input-author"
               type="text"
@@ -82,10 +83,10 @@ const EditBook = (props) => {
               required
               autoFocus
               onChange={handleChange}
-            />
-            <label htmlFor="author">Author</label>  
+            />  
             </div>
             <div className="genre-box">
+            <label htmlFor="genre">Genre</label>
             <input
               className="input-genre"
               type="text"
@@ -94,10 +95,10 @@ const EditBook = (props) => {
               required
               autoFocus
               onChange={handleChange}
-            />
-            <label htmlFor="genre">Genre</label>  
+            />  
           </div>
-        </div>
+          </div>
+          <button type='submit' id="edit-save-button">Save</button>
       </form>
     </div>
     </>

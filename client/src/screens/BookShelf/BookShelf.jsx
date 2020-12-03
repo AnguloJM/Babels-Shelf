@@ -15,6 +15,10 @@ const BookShelf = (props) => {
   }, [])
 
   return (
+    <>
+      <div className="bookshelf-title">
+        <h2>Babel's Shelf</h2>
+      </div>
     <div className="page-container">
       {
          allBooks.map(book => (
@@ -28,7 +32,8 @@ const BookShelf = (props) => {
           </div>
           ))
       }
-    </div>
+      </div>
+      </>
   )
 }
 

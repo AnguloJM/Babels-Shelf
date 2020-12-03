@@ -41,6 +41,7 @@ const MyShelf = (props) => {
   }, [userFavorites])
   return (
     <div>
+      <h2>My Shelf</h2>
       {
         favBooks.map(book => (
           <div className="content-wrap" key={book.id} > 
