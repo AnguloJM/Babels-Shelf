@@ -1,8 +1,20 @@
 .top-box {
-  background-color: #32362D;
+  background-color: #32362d;
 }
 
 #homescreen-img {
   width: max-content;
   max-height: 400px;
+}
+
+#welcome {
+  font-size: 50px;
+  margin-top: 2%;
+}
+
+.homepage-para {
+  max-width: 1000px;
+  padding: 20px;
+  margin: 0 auto;
+  font-size: 30px;
 }

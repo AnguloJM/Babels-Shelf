@@ -15,8 +15,9 @@ const HomePage = (props) => {
           />
         </div>
         <div className="welcome-message">
-          <h1>Welcome</h1>
-          <p></p>
+          <h1 id="welcome">Welcome</h1>
+        <p className="homepage-para">Babel'Shelf is your never ending library. Search through a vierty of books and begin creating your own personalized library. Can't find
+           the book you your looking for? You have the option to add and share your book within our community!</p>
         </div>
       </div>
   )
