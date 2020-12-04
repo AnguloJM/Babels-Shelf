@@ -43,9 +43,9 @@ const BookShelf = (props) => {
              <p>{book.title}</p>
              <button type="button" onClick={() => toggleMyShelf(book.id)}>Add to My Shelf</button>
              <button
-               id="card-delete-button"
+               id="bookshelf-delete-button"
                onClick={() => handleClick(book.id)}>
-               <Link className="delete-link" to={`/bookshelf/`}>Delete</Link>
+               <Link className="bookshelf-delete-link" to={`/bookshelf/`}>Delete</Link>
              </button>
           </div>
           ))
