@@ -1,23 +1,45 @@
 .header {
-  background-color: #F4F2E9;
+  background-color: #f4f2e9;
   height: 100px;
+  display: flex;
+  justify-content: space-between;
 }
 
 .header-login {
-  background-color:  #32362D;
+  background-color: #32362d;
   height: 100px;
 }
 
+#logo {
+  display: flex;
+  align-items: center;
+  padding-left: 50px;
+}
+
+.home-login-register {
+  display: flex;
+  align-items: center;
+  width: 13%;
+  justify-content: space-between;
+  padding-right: 20px;
+}
+
 #login {
-  background-color: #53352D;
-  color: #FFFFFF;
-  width: 100px;
-  height: 25px;
+  background-color: #53352d;
+  color: #ffffff;
+  width: 150px;
+  height: 35px;
+  border: 1px;
+  border-radius: 10px;
+  font-size: 23px;
 }
 
 #register {
-  background-color: #53352D;
-  color: #FFFFFF;
-  width: 100px;
-  height: 25px
+  background-color: #53352d;
+  color: #ffffff;
+  width: 150px;
+  height: 35px;
+  border: 1px;
+  border-radius: 10px;
+  font-size: 23px;
 }

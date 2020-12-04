@@ -9,7 +9,7 @@ const Header = (props) => {
         
   return (
     <div className={color}>
-      <h1><Link id="logo" to="/">Babel's Shelf</Link></h1>
+      <h1 id="logo"><Link to="/" style={{ textDecoration: 'none', color:" #53352d" }}>Babel's Shelf</Link></h1>
       {
         currentUser ?
           <>
@@ -18,10 +18,10 @@ const Header = (props) => {
           :
 
           currentPath === "" ?
-          <>
+          <div className="home-login-register">
               <Link to="/login"><button id="login">Login</button></Link>
               <Link to="/register"><button id="register">Register</button></Link>
-          </>
+          </div>
             :
 
             currentPath === "login" ?
