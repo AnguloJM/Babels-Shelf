@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { Redirect, NavLink } from 'react-router-dom';
 import { createBook } from '../../services/books';
+import { Modal, Button } from 'react-bootstrap';
 import './AddBooks.css';
 
 const AddBooks = () => {
@@ -12,8 +13,10 @@ const AddBooks = () => {
   });
 
   const [allBooks, setAllBooks] = useState([])
-
   const [isCreated, setCreated] = useState(false);
+  const [show, setShow] = useState(false);
+  const handleClose = () => setShow(false);
+  const handleShow = () => setShow(true);
 
   const handleChange = (event) => {
     const { name, value } = event.target;
@@ -90,6 +93,7 @@ const AddBooks = () => {
           </div>
           </div>
           <button type='submit' id="create-save-button">Add Book</button>
+          
       </form>
     </div>
     </div>

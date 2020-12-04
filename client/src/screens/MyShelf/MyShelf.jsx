@@ -1,28 +1,30 @@
 import React, { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
-import { renderAllFavorites } from '../../services/favorites';
+import { destroyFavorite, renderAllFavorites } from '../../services/favorites';
 import { renderAllBooks } from '../../services/books';
 import './MyShelf.css'
 
 const MyShelf = (props) => {
 
   const [userFavorites, setFavorites] = useState([])
+  const [isDeleted, setDeleted] = useState(false)
+  const [favBooks, setFavBooks] = useState([])
   const { currentUser } = props;
 
   useEffect(() => {
     const getAllFavorites = async () => {
       const favoritesData = await renderAllFavorites();
-      const favsInfo = favoritesData.map((favs) => {
-        if (currentUser.id === favs.user_id) {
-          return favs.book_id
-        }
-      })
-      setFavorites(favsInfo)
+      if (currentUser) {
+        const favsInfo = favoritesData.map((favs) => {
+          if (currentUser.id === favs.user_id) {
+            return favs.book_id
+          }
+        })
+        setFavorites(favsInfo)
+      }
     }
     getAllFavorites();
-  }, [])
-
-  const [favBooks, setFavBooks] = useState([])
+  }, [currentUser])
 
   useEffect(() => {
     const getAllBooks = async () => {
@@ -39,6 +41,12 @@ const MyShelf = (props) => {
     }
     getAllBooks();
   }, [userFavorites])
+
+  const handleClick = async (id) => {
+    await destroyFavorite(id)
+    setDeleted(!isDeleted);
+  }
+
   return (
     <div>
       <h2>My Shelf</h2>
@@ -52,7 +60,11 @@ const MyShelf = (props) => {
             />
             <p>{book.title}</p>
             <Link className="edit-link" to={`/editbook/${book.id}/`}><button id="card-edit-button">Edit</button></Link>
-            <button>Remove</button>
+            <button
+              id="myshelf-delete-button"
+              onClick={() => handleClick(book.id)}
+            ><Link className="myshelf-delete-Link" to={`/myShelf`}>Remove</Link>
+            </button>
           </div>
          ))
       }
