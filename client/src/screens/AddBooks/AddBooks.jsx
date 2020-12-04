@@ -12,7 +12,7 @@ const AddBooks = () => {
     genre: ''
   });
 
-  const [allBooks, setAllBooks] = useState([])
+  // const [allBooks, setAllBooks] = useState([])
   const [isCreated, setCreated] = useState(false);
   const [show, setShow] = useState(false);
   const handleClose = () => setShow(false);
@@ -92,8 +92,21 @@ const AddBooks = () => {
             />  
           </div>
           </div>
-          <button type='submit' id="create-save-button">Add Book</button>
-          
+          <button id="create-save-button" onClick={handleShow}>Add Book</button>
+          {/* <Modal show={show} onHide={handleClose}>
+            <Modal.Header closeButton>
+              <Modal.Title>Book has been added to your shelf!</Modal.Title>
+            </Modal.Header>
+            <Modal.Body>Want to add another book?</Modal.Body>
+            <Modal.Footer>
+              <Button variant="secondary" autoFocus onClick={handleClose}>
+                Close
+              </Button>
+              <Button variant="primary" onClick={handleClose}>
+              Save Changes
+               </Button>
+            </Modal.Footer>
+          </Modal> */}
       </form>
     </div>
     </div>
