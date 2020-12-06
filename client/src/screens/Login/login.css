@@ -1,0 +1,52 @@
+.login-form {
+  max-width: 1000px;
+  height: 500px;
+  padding: 20px;
+  margin: 0 auto;
+  margin-top: 10%;
+  background-color: #f4f2e9;
+}
+.inner-login-form-box {
+  max-width: 500px;
+  height: 250px;
+  padding: 20px;
+  margin: 0 auto;
+  margin-top: 10%;
+  background-color: #ffffff;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+#login-acc-title {
+  margin-right: 68%;
+  padding-bottom: 20px;
+  font-size: 25px;
+}
+
+#login-username-box {
+  height: 40px;
+  width: 400px;
+  background: #c4c4c4;
+  border: none;
+  padding-left: 10px;
+}
+
+#login-password-box {
+  height: 40px;
+  width: 400px;
+  background: #c4c4c4;
+  border: none;
+  padding-left: 10px;
+}
+
+#login-screen-login-button {
+  margin-right: 62%;
+  width: 100px;
+  height: 25px;
+  background-color: #53352d;
+  color: #ffffff;
+  border: 1px;
+  border-radius: 4px;
+}

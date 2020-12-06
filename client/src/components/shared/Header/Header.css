@@ -8,6 +8,8 @@
 .header-login {
   background-color: #32362d;
   height: 100px;
+  display: flex;
+  justify-content: space-around;
 }
 
 #logo {
@@ -42,4 +44,27 @@
   border: 1px;
   border-radius: 10px;
   font-size: 23px;
+}
+
+#return-button {
+  background-color: #53352d;
+  color: #ffffff;
+  width: 150px;
+  height: 35px;
+  border: 1px;
+  border-radius: 10px;
+  font-size: 15px;
+}
+
+#logout-button {
+  background-color: #53352d;
+  color: #ffffff;
+  width: 150px;
+  height: 35px;
+  border: 1px;
+  border-radius: 10px;
+  font-size: 23px;
+}
+
+.user-buttons {
 }

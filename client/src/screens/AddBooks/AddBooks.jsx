@@ -30,6 +30,7 @@ const AddBooks = () => {
     event.preventDefault();
     const created = await createBook(book);
     setCreated({ created });
+    alert('Want to add another book?')
   }
 
   if (isCreated) {
@@ -39,26 +40,24 @@ const AddBooks = () => {
   return (
     <div>
       <div id="addbooks-title">
-        <h1>Add More Books!</h1>
+        <h1 id="addmore-title">Add More Books!</h1>
       </div>
-      <div className="book-create">
+      {/* <div className="book-create"> */}
       <form className="create-form" onSubmit={handleSubmit}>
         <div className="create-inputs">
-            <div className="create-img-box">
-            <label htmlFor="img_url">Image Link</label>
             <input
-              className="create-input-img"
+                className="create-img-box"
+                placeholder="Image URL"
               type="text"
               value={book.img_url}
               name="img_url"
               autoFocus
               onChange={handleChange}
             />
-          </div>
-            <div className="create-title-box">
-            <label htmlFor="title">Title</label>
+            <br />
             <input
-              className="create-input-title"
+                className="create-title-box"
+                placeholder="Title"
               type="text"
               value={book.title}
               name='title'
@@ -66,11 +65,10 @@ const AddBooks = () => {
               autoFocus
               onChange={handleChange}
             />  
-          </div>
-            <div className="create-author-box">
-            <label htmlFor="author">Author</label>
+           <br />
             <input
-              className="create-input-author"
+                className="create-author-box"
+                placeholder="Author"
               type="text"
               value={book.author}
               name='author'
@@ -78,11 +76,10 @@ const AddBooks = () => {
               autoFocus
               onChange={handleChange}
             />  
-            </div>
-            <div className="create-genre-box">
-            <label htmlFor="genre">Genre</label>
+            <br />
             <input
-              className="create-input-genre"
+                className="create-genre-box"
+                placeholder="Genre"
               type="text"
               value={book.genre}
               name='genre'
@@ -90,9 +87,10 @@ const AddBooks = () => {
               autoFocus
               onChange={handleChange}
             />  
+            <br />
+            <button id="create-addbook-button" onClick={handleShow}>Add Book</button>
           </div>
-          </div>
-          <button id="create-save-button" onClick={handleShow}>Add Book</button>
+          {/* <button id="create-save-button" onClick={handleShow}>Add Book</button> */}
           {/* <Modal show={show} onHide={handleClose}>
             <Modal.Header closeButton>
               <Modal.Title>Book has been added to your shelf!</Modal.Title>
@@ -108,7 +106,7 @@ const AddBooks = () => {
             </Modal.Footer>
           </Modal> */}
       </form>
-    </div>
+    {/* </div> */}
     </div>
   )
 }

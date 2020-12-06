@@ -11,13 +11,24 @@ const MyShelf = (props) => {
   const [favBooks, setFavBooks] = useState([])
   const { currentUser } = props;
 
+  const Favorite = function (favId, bookId) {
+    this.favId = favId
+    this.bookId = bookId
+  }
+
+  const FavoriteBook = function (favId, book) {
+    this.favId = favId
+    this.book = book
+  }
+
   useEffect(() => {
     const getAllFavorites = async () => {
       const favoritesData = await renderAllFavorites();
+      console.log(favoritesData)
       if (currentUser) {
         const favsInfo = favoritesData.map((favs) => {
           if (currentUser.id === favs.user_id) {
-            return favs.book_id
+            return new Favorite(favs.id, favs.book_id)
           }
         })
         setFavorites(favsInfo)
@@ -29,40 +40,43 @@ const MyShelf = (props) => {
   useEffect(() => {
     const getAllBooks = async () => {
       const bookData = await renderAllBooks();
-      bookData.map((book) => {
-        userFavorites.map((fav) => {
-          if (book.id == fav) {
-            return favBooks.push(book)
+      const favBookList = []
+
+      bookData.forEach((book) => {
+        userFavorites.forEach((fav) => {
+          if (book.id == fav.bookId) {
+            return favBookList.push(new FavoriteBook(fav.favId, book))
           }
         })
       })
-      const favoriteReads = [...favBooks]
-      setFavBooks(favoriteReads)
+      setFavBooks([...favBookList])
     }
     getAllBooks();
   }, [userFavorites])
 
-  const handleClick = async (id) => {
-    await destroyFavorite(id)
-    setDeleted(!isDeleted);
+  const handleClick = async (favId) => {
+    await destroyFavorite(favId)
+    // setFavBooks(prevState => prevState.filter(favBooks => favBooks.id !== favId))
   }
 
+  console.log(userFavorites)
+  console.log(favBooks)
   return (
     <div>
       <h2>My Shelf</h2>
       {
-        favBooks.map(book => (
-          <div className="content-wrap" key={book.id} > 
+        favBooks.map(favBook => (
+          <div className="content-wrap" key={favBook.book.id} > 
             <img
               className="myshelf-img"
-              src={book.img_url}
+              src={favBook.book.img_url}
               alt="book cover"
             />
-            <p>{book.title}</p>
-            <Link className="edit-link" to={`/editbook/${book.id}/`}><button id="card-edit-button">Edit</button></Link>
+            <p>{favBook.book.title}</p>
+            <Link className="edit-link" to={`/editbook/${favBook.book.id}/`}><button id="card-edit-button">Edit</button></Link>
             <button
               id="myshelf-delete-button"
-              onClick={() => handleClick(book.id)}
+              onClick={() => handleClick(favBook.favId)}
             ><Link className="myshelf-delete-Link" to={`/myShelf`}>Remove</Link>
             </button>
           </div>

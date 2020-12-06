@@ -1,0 +1,28 @@
+.dashboard-container {
+}
+
+.user-greeting-box {
+  background: #f4f2e9;
+  height: 250px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+#dashboard-welcome {
+  font-size: 50px;
+}
+
+.routes-body {
+  display: flex;
+  flex-direction: column;
+}
+
+#bookshelf-link {
+}
+
+#myshelf-link {
+}
+
+#addbooks-link {
+}

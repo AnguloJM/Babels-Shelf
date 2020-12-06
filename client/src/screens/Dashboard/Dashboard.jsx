@@ -6,14 +6,14 @@ const Dashboard = (props) => {
   const { currentUser } = props;
 
   return (
-    <div>
+    <div className="dashboard-container">
       <div className="user-greeting-box">
-        <h2>Welcome { currentUser.username}</h2>
+        <h2 id="dashboard-welcome">Welcome { currentUser.username}!</h2>
       </div>
       <div className="routes-body">
-        <Link id="bookshelf-link" to='/bookshelf'>Search BookShelf</Link>
-        <Link id="myshelf-link" to='/myShelf'>My Shelf</Link>
-        <Link id="addbooks-link" to='/addBooks'>Add Books</Link>
+        <Link id="bookshelf-link" to='/bookshelf' style={{ textDecoration: 'none', color:" #000000" }}>Search BookShelf</Link>
+        <Link id="myshelf-link" to='/myShelf' style={{ textDecoration: 'none', color:" #000000" }}>My Shelf</Link>
+        <Link id="addbooks-link" to='/addBooks' style={{ textDecoration: 'none', color:" #000000" }}>Add Books</Link>
       </div>
     </div>
 

@@ -1,0 +1,87 @@
+#addbooks-title {
+  background: #f4f2e9;
+  height: 200px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+#addmore-title {
+  font-weight: normal;
+  font-size: 40px;
+}
+
+.create-form {
+  /* max-width: 1000px;
+  height: 500px;
+  padding: 20px;
+  margin: 0 auto;
+  margin-top: 7%;
+  background: #32362d;
+  display: flex;
+  flex-direction: column;
+  justify-content: center; */
+
+  max-width: 1000px;
+  height: 500px;
+  padding: 20px;
+  margin: 0 auto;
+  margin-top: 10%;
+  background-color: #32362d;
+}
+
+.create-inputs {
+  max-width: 500px;
+  height: 250px;
+  padding: 20px;
+  margin: 0 auto;
+  margin-top: 10%;
+  background-color: #32362d;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.create-img-box {
+  height: 60px;
+  width: 450px;
+  background: #f4f2e9;
+  border: none;
+  padding-left: 10px;
+}
+
+.create-title-box {
+  height: 60px;
+  width: 450px;
+  background: #f4f2e9;
+  border: none;
+  padding-left: 10px;
+}
+
+.create-author-box {
+  height: 60px;
+  width: 450px;
+  background: #f4f2e9;
+  border: none;
+  padding-left: 10px;
+}
+
+.create-genre-box {
+  height: 60px;
+  width: 450px;
+  background: #f4f2e9;
+  border: none;
+  padding-left: 10px;
+}
+
+#create-addbook-button {
+  margin-right: 62%;
+  width: 150px;
+  height: 50px;
+  background-color: #53352d;
+  color: #ffffff;
+  border: 1px;
+  border-radius: 4px;
+  font-size: 19px;
+}
