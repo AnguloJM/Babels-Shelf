@@ -1,11 +1,12 @@
 class FavoritesController < ApplicationController
   before_action :set_favorite, only: [:show, :update, :destroy]
+  before_action :authorize_request
 
   # GET /favorites
   def index
-    @favorites = Favorite.all
+    @favorites = @current_user.favorites
 
-    render json: @favorites
+    render json: @favorites, include: :book
   end
 
   # GET /favorites/1
