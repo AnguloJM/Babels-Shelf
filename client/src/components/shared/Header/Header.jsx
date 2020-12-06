@@ -14,10 +14,12 @@ const Header = (props) => {
           <div className ="header-login">
             <h1 id="logo-login"><Link to="/" style={{ textDecoration: 'none', color: " #F4F2E9" }}>Babel's Shelf</Link></h1>
             <div className="user-buttons">
-              <button id="logout-button" onClick={handleLogout}>Logout</button>
               <Link to="/dashboard"><button id="return-button">Return to Dashboard</button></Link>
+              <button id="logout-button" onClick={handleLogout}>Logout</button>
             </div>
           </div>
+  
+
           :
 
           currentPath === "" ?

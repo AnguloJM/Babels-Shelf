@@ -9,7 +9,7 @@
   background-color: #32362d;
   height: 100px;
   display: flex;
-  justify-content: space-around;
+  justify-content: space-between;
 }
 
 #logo {
