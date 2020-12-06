@@ -29,7 +29,7 @@ const BookShelf = (props) => {
   return (
     <>
       <div className="bookshelf-title">
-        <h2>Babel's Shelf</h2>
+        <h2 id="babels-shelf-title">Babel's Shelf</h2>
       </div>
       <div className="page-container">
       {

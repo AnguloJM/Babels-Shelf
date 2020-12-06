@@ -1,3 +1,15 @@
+.bookshelf-title {
+  background: #f4f2e9;
+  height: 250px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+#babels-shelf-title {
+  font-size: 50px;
+}
+
 .page-container {
   /* position: relative; */
   /* min-height: 100vh; */

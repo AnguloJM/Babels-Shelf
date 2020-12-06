@@ -12,21 +12,11 @@
 }
 
 .create-form {
-  /* max-width: 1000px;
-  height: 500px;
-  padding: 20px;
-  margin: 0 auto;
-  margin-top: 7%;
-  background: #32362d;
-  display: flex;
-  flex-direction: column;
-  justify-content: center; */
-
   max-width: 1000px;
   height: 500px;
   padding: 20px;
   margin: 0 auto;
-  margin-top: 10%;
+  margin-top: 6%;
   background-color: #32362d;
 }
 

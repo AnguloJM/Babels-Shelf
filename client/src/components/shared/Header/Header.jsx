@@ -18,8 +18,6 @@ const Header = (props) => {
               <button id="logout-button" onClick={handleLogout}>Logout</button>
             </div>
           </div>
-  
-
           :
 
           currentPath === "" ?
