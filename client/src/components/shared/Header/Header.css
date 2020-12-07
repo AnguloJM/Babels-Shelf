@@ -101,7 +101,21 @@
 .user-buttons {
   display: flex;
   align-items: center;
-  width: 13%;
+  width: 330px;
   justify-content: space-between;
   padding-right: 20px;
+}
+
+@media only screen and (max-width: 767px) {
+  .header-login {
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+  }
+  #logo-login {
+    padding-left: 0;
+  }
+  .user-buttons {
+    padding-right: 0;
+  }
 }

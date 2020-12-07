@@ -13,6 +13,7 @@
 .page-container {
   /* position: relative; */
   /* min-height: 100vh; */
+  padding: 0 50px;
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
@@ -61,4 +62,22 @@
 }
 .add-to-shelf-button:hover:after {
   transform: translateX(10px);
+}
+
+@media only screen and (max-width: 989px) {
+  .content-wrap {
+    width: calc(50% - 50px);
+    margin-bottom: 30px;
+  }
+}
+@media only screen and (max-width: 767px) {
+  .page-container {
+    flex-direction: column;
+    align-items: center;
+    padding: 0 30px;
+  }
+  .content-wrap {
+    width: 100%;
+    margin-bottom: 30px;
+  }
 }
