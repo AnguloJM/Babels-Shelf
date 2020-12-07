@@ -84,14 +84,17 @@ const AddBooks = () => {
               autoFocus
               onChange={handleChange}
             />  
-            <br />
+          <br />
           <button
+            id="create-addbook-button"
+            >Add Book</button>
+          {/* <button
             id="create-addbook-button"
             onClick={() => {
               setShowModal(true)
-            }}>Add Book</button>
+            }}>Add Book</button> */}
           </div>
-          <Modal show={showModal} onHide={handleClose}>
+          {/* <Modal show={showModal} onHide={handleClose}>
             <Modal.Header closeButton>
               <Modal.Title>Book has been added to your shelf!</Modal.Title>
             </Modal.Header>
@@ -100,7 +103,7 @@ const AddBooks = () => {
             <Link to="/dashboard"> Return to Dashboard</Link>
             <Link><Redirect to="addBooks"/> Add Another Book</Link>
             </Modal.Footer>
-          </Modal>
+          </Modal> */}
       </form>
     </div>
   )
