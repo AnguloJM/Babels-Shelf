@@ -62,3 +62,14 @@
 ::placeholder {
   color: #000000;
 }
+
+@media only screen and (max-width: 767px) {
+  #reg-username-box,
+  #reg-email-box,
+  #reg-password-box {
+    width: 100%;
+  }
+  #create-acc-title {
+    margin-right: 0;
+  }
+}

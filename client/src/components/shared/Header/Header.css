@@ -107,15 +107,29 @@
 }
 
 @media only screen and (max-width: 767px) {
-  .header-login {
+  .header-login,
+  .header {
     flex-direction: column;
     align-items: center;
     justify-content: center;
   }
-  #logo-login {
+  #logo-login,
+  #logo {
     padding-left: 0;
   }
-  .user-buttons {
+  .user-buttons,
+  .home-login-register {
     padding-right: 0;
+  }
+  .home-login-register {
+    width: auto;
+  }
+  .home-login-register a {
+    margin: 0 5px;
+  }
+  #solo-login-button,
+  #solo-register-button {
+    margin-top: 2px;
+    margin-right: 0;
   }
 }
