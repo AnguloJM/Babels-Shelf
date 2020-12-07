@@ -6,7 +6,6 @@ import './BookShelf.css'
 
 const BookShelf = (props) => {
   const [allBooks, setAllBooks] = useState([])
-  const [isDeleted, setDeleted] = useState(false);
   const { currentUser } = props;
 
   useEffect(() => {
@@ -15,12 +14,7 @@ const BookShelf = (props) => {
       setAllBooks(bookData)
     }
     getAllBooks();
-  }, [isDeleted])
-
-  const handleClick = async (id) => {
-    await destroyBook(id);
-    setDeleted(!isDeleted);
-  }
+  }, [])
 
   const toggleMyShelf = async (bookId) => {
     await createFavorite({'user_id': currentUser.id, 'book_id': bookId})
@@ -41,13 +35,8 @@ const BookShelf = (props) => {
                alt="book cover"
              />
              <p>{book.title}</p>
-             <button type="button" onClick={() => toggleMyShelf(book.id)}>Add to My Shelf</button>
+             <button class="add-to-shelf-button" type="button" onClick={() => toggleMyShelf(book.id)}>Add to My Shelf</button>
              <Link className="edit-link" to={`/editbook/${book.id}/`}><button id="card-edit-button">Edit</button></Link>
-             <button
-               id="bookshelf-delete-button"
-               onClick={() => handleClick(book.id)}>
-               <Link className="bookshelf-delete-link" to={`/bookshelf/`}>Delete</Link>
-             </button>
           </div>
           ))
       }

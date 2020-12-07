@@ -15,15 +15,50 @@
   /* min-height: 100vh; */
   display: flex;
   flex-direction: row;
+  flex-wrap: wrap;
   max-width: 1300px;
   justify-content: space-between;
+  margin: 100px auto;
 }
 
 .content-wrap {
-  /* padding-bottom: 2.5rem; */
+  width: calc(25% - 50px);
+  margin-bottom: 75px;
+  border: 5px solid lightgray;
+  padding: 50px 0;
+  transition: border-color ease 0.2s;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.content-wrap:hover {
+  border-color: #d4af37;
 }
 
 .bookshelf-img {
   height: 150px;
   width: 100px;
+}
+
+.add-to-shelf-button {
+  border: none;
+  background: transparent;
+  margin: 10px 0;
+  position: relative;
+  padding-right: 15px;
+  transition: color ease 0.2s;
+}
+.add-to-shelf-button:after {
+  content: ">";
+  font-weight: bold;
+  position: absolute;
+  right: 0;
+  transition: transform ease 0.2s;
+}
+.add-to-shelf-button:hover {
+  color: navy;
+}
+.add-to-shelf-button:hover:after {
+  transform: translateX(10px);
 }

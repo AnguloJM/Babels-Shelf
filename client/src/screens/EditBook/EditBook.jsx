@@ -1,10 +1,10 @@
 import React, { useState, useEffect } from 'react';
 import { useParams, Redirect, Link } from 'react-router-dom';
-import { renderOneBook, updateBook } from '../../services/books';
+import { renderOneBook, updateBook, destroyBook } from '../../services/books';
 import './EditBook.css'
 
 const EditBook = (props) => {
-
+  
   const [books, setBooks] = useState({
     img_url: '',
     title: '',
@@ -12,6 +12,7 @@ const EditBook = (props) => {
     genre: ''
   });
 
+  const [isDeleted, setDeleted] = useState(false);
   const [isUpdate, setUpdated] = useState(false);
   let { id } = useParams();
 
@@ -38,14 +39,27 @@ const EditBook = (props) => {
     setUpdated(updated);
   }
 
+  const handleClick = async (id) => {
+    function bookShelfRedirect() {
+      window.location.href = "/bookshelf/";
+    }
+    
+    async function deleteBook(callback) {
+      await destroyBook(id);
+      setDeleted(!isDeleted);
+      callback();
+    }
+    deleteBook(bookShelfRedirect);
+  }
+
   if (isUpdate) {
     return <Redirect to={`/bookshelf/`}/>
   }
 
   return (
     <div>
-    <div className="edit-header">
-      <h1 id="edit-message">Edit Book</h1>
+      <div className="edit-header">
+        <h1 id="edit-message">Edit Book</h1>
       </div>
       <Link to="/myShelf"><button id="return">Return</button></Link>
       <form className="edit-form" onSubmit={handleSubmit}>
@@ -93,8 +107,13 @@ const EditBook = (props) => {
               onChange={handleChange}
             />  
           </div>
-          <button type='submit' id="edit-save-button">Save</button>
-        </form>
+        <button type='submit' id="edit-save-button">Save</button>
+        <button
+          id="bookshelf-delete-button"
+          onClick={() => handleClick(books.id)}>
+          <Link className="bookshelf-delete-link" to={`/bookshelf/`}>Delete</Link>
+        </button>
+      </form>
     </div>
   )
 }
