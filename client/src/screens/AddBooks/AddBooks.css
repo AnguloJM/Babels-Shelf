@@ -28,8 +28,6 @@
   background-color: #32362d;
   display: flex;
   flex-direction: column;
-  justify-content: center;
-  align-items: center;
 }
 
 .create-img-box {
@@ -65,7 +63,6 @@
 }
 
 #create-addbook-button {
-  margin-right: 62%;
   width: 150px;
   height: 50px;
   background-color: #53352d;
@@ -75,6 +72,15 @@
   font-size: 19px;
 }
 @media only screen and (max-width: 989px) {
+  .create-form {
+    height: 450px;
+  }
 }
 @media only screen and (max-width: 767px) {
+  .create-inputs input {
+    width: 100%;
+  }
+  .create-form {
+    height: 350px;
+  }
 }
