@@ -43,7 +43,7 @@ const EditBook = (props) => {
     function bookShelfRedirect() {
       window.location.href = "/bookshelf/";
     }
-    
+
     async function deleteBook(callback) {
       await destroyBook(id);
       setDeleted(!isDeleted);
@@ -61,7 +61,9 @@ const EditBook = (props) => {
       <div className="edit-header">
         <h1 id="edit-message">Edit Book</h1>
       </div>
-      <Link to="/myShelf"><button id="return">Return</button></Link>
+      <div id="return-link">
+        <Link to="/myShelf"><button id="return">Return</button></Link>
+      </div>
       <form className="edit-form" onSubmit={handleSubmit}>
         <div className="edit-inputs">
             <input

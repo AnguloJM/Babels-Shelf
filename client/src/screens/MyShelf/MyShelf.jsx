@@ -23,8 +23,11 @@ const MyShelf = (props) => {
   }
 
   return (
-    <div>
-      <h2>My Shelf</h2>
+    <>
+      <div className="myshelf-title">
+        <h2 id="myshelf-message">My Shelf</h2>
+      </div>
+      <div className="myshelf-container">
       {
         favorites.map(favBook => (
           <div className="content-wrap" key={favBook.book.id} > 
@@ -42,7 +45,8 @@ const MyShelf = (props) => {
           </div>
          ))
       }
-    </div>
+      </div>
+    </>
   )
 }
 

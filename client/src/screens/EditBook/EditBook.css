@@ -64,8 +64,13 @@
   padding-left: 10px;
 }
 
+#return-link {
+  max-width: 1000px;
+  margin: 0 auto;
+  text-align: left;
+}
+
 #return {
-  margin-right: 890px;
   margin-top: 50px;
   width: 140px;
   height: 30px;
@@ -77,7 +82,16 @@
 }
 
 #edit-save-button {
-  margin-right: 310px;
+  margin-right: 30px;
+}
+
+#bookshelf-delete-button a {
+  color: #ffffff;
+  text-decoration: none;
+}
+
+#edit-save-button,
+#bookshelf-delete-button {
   width: 150px;
   height: 30px;
   background-color: #53352d;
@@ -85,4 +99,15 @@
   border: 1px;
   border-radius: 4px;
   font-size: 19px;
+}
+
+@media only screen and (max-width: 989px) {
+  #return-link {
+    padding-left: 50px;
+  }
+}
+@media only screen and (max-width: 767px) {
+  .edit-inputs input {
+    width: 100%;
+  }
 }
