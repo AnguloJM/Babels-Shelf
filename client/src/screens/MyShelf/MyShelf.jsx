@@ -34,7 +34,6 @@ const MyShelf = (props) => {
               alt="book cover"
             />
             <p>{favBook.book.title}</p>
-            <Link className="edit-link" to={`/editbook/${favBook.book.id}/`}><button id="card-edit-button">Edit</button></Link>
             <button
               id="myshelf-delete-button"
               onClick={() => handleClick(favBook.id)}

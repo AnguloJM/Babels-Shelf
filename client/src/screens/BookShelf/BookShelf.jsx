@@ -42,6 +42,7 @@ const BookShelf = (props) => {
              />
              <p>{book.title}</p>
              <button type="button" onClick={() => toggleMyShelf(book.id)}>Add to My Shelf</button>
+             <Link className="edit-link" to={`/editbook/${book.id}/`}><button id="card-edit-button">Edit</button></Link>
              <button
                id="bookshelf-delete-button"
                onClick={() => handleClick(book.id)}>

@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { useParams, Redirect, Link } from 'react-router-dom';
 import { renderOneBook, updateBook } from '../../services/books';
+import './EditBook.css'
 
 const EditBook = (props) => {
 
@@ -38,33 +39,30 @@ const EditBook = (props) => {
   }
 
   if (isUpdate) {
-    return <Redirect to={`/myShelf/`}/>
+    return <Redirect to={`/bookshelf/`}/>
   }
 
   return (
-    <>
+    <div>
     <div className="edit-header">
-      <Link id="return" to="/myShelf">Return</Link>
       <h1 id="edit-message">Edit Book</h1>
-    </div>
-    <div className="lesson-edit">
+      </div>
+      <Link to="/myShelf"><button id="return">Return</button></Link>
       <form className="edit-form" onSubmit={handleSubmit}>
-        <div className="inputs">
-            <div className="img-box">
-            <label htmlFor="img_url">Image Link</label>
+        <div className="edit-inputs">
             <input
-              className="input-img"
+              className="edit-img-box"
+              placeholder="Image URL"
               type="text"
               value={books.img_url}
               name="img_url"
               autoFocus
               onChange={handleChange}
             />
-          </div>
-            <div className="title-box">
-            <label htmlFor="title">Title</label>
+            <br />
             <input
-              className="input-title"
+              className="edit-title-box"
+              placeholder="Title"
               type="text"
               value={books.title}
               name='title'
@@ -72,11 +70,10 @@ const EditBook = (props) => {
               autoFocus
               onChange={handleChange}
             />  
-          </div>
-            <div className="author-box">
-            <label htmlFor="author">Author</label>
+            <br />
             <input
-              className="input-author"
+              className="edit-author-box"
+              placeholder="Author"
               type="text"
               value={books.author}
               name='author'
@@ -84,11 +81,10 @@ const EditBook = (props) => {
               autoFocus
               onChange={handleChange}
             />  
-            </div>
-            <div className="genre-box">
-            <label htmlFor="genre">Genre</label>
+            <br />
             <input
-              className="input-genre"
+              className="edit-genre-box"
+              placeholder="Genre"
               type="text"
               value={books.genre}
               name='genre'
@@ -97,11 +93,9 @@ const EditBook = (props) => {
               onChange={handleChange}
             />  
           </div>
-          </div>
           <button type='submit' id="edit-save-button">Save</button>
-      </form>
+        </form>
     </div>
-    </>
   )
 }
 
