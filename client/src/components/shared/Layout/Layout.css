@@ -1,0 +1,3 @@
+.layout-children {
+  min-height: calc(100vh - 100px - 185px);
+}
