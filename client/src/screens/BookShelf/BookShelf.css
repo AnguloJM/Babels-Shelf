@@ -42,6 +42,16 @@
   width: 100px;
 }
 
+#card-edit-button {
+  margin-right: 62%;
+  width: 100px;
+  height: 25px;
+  background-color: #53352d;
+  color: #ffffff;
+  border: 1px;
+  border-radius: 4px;
+}
+
 .add-to-shelf-button {
   border: none;
   background: transparent;

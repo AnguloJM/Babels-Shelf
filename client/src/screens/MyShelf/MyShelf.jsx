@@ -40,7 +40,7 @@ const MyShelf = (props) => {
             <button
               id="myshelf-delete-button"
               onClick={() => handleClick(favBook.id)}
-            ><Link className="myshelf-delete-Link" to={`/myShelf`}>Remove</Link>
+            ><Link className="myshelf-delete-Link" to={`/myShelf`} style={{ textDecoration: 'none', color: " #F4F2E9" }}>Remove</Link>
             </button>
           </div>
          ))

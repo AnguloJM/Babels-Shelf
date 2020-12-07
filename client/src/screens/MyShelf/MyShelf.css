@@ -24,3 +24,12 @@
   height: 150px;
   width: 100px;
 }
+
+#myshelf-delete-button {
+  width: 100px;
+  height: 25px;
+  background-color: #53352d;
+  color: #ffffff;
+  border: 1px;
+  border-radius: 4px;
+}
