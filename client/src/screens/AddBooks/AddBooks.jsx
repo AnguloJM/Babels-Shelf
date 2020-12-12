@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
-import { Redirect, Link } from 'react-router-dom';
+import { Redirect } from 'react-router-dom';
 import { createBook } from '../../services/books';
-import { Modal, Button } from 'react-bootstrap';
+// import { Modal, Button } from 'react-bootstrap';
 import './AddBooks.css';
 
 const AddBooks = () => {
@@ -13,8 +13,8 @@ const AddBooks = () => {
   });
 
   const [isCreated, setCreated] = useState(false);
-  const [showModal, setShowModal] = useState(false);
-  const handleClose = () => setShowModal(false);
+  // const [showModal, setShowModal] = useState(false);
+  // const handleClose = () => setShowModal(false);
 
   const handleChange = (event) => {
     const { name, value } = event.target;

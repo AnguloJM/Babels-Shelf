@@ -5,7 +5,7 @@ import { Link } from 'react-router-dom';
 const Header = (props) => {
   const { currentUser, handleLogout, currentPath } = props;
 
-  const color = currentUser ? "header-login" && "logo-lgin" : "header" && "logo-login"
+  const color = currentUser ? "header-login" && "logo-login" : "header" && "logo-login"
         
   return (
     <div className={color}>
